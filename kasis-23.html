@@ -53,11 +53,6 @@
     <script>
         (function (){
             try {
-                setTimeout(
-                    () => document.getElementsByTagName('html')[0].classList.add('device-ios'),
-                    3000
-                );
-
                 if (typeof window === `undefined` || typeof navigator === `undefined`) {
                     return;
                 }
