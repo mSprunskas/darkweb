@@ -1,43 +1,180 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="lt">
 <head>
     <meta charset="utf-8">
-    <title>Kayaking 2026-07-22 18:00</title>
+    <title>Baidarės 2026-07-22 18:00</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="">
     <meta property="og:type" content="">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#0b3d5c">
+    <style>
+        /* River: layered gradients drifting at different speeds + a light caustics sheen. */
+        @keyframes drift-slow {
+            from { background-position: 0 0, 0 0; }
+            to   { background-position: -1200px 0, 900px 0; }
+        }
+
+        @keyframes drift-fast {
+            from { background-position: 0 0, 0 0; }
+            to   { background-position: -800px 0, 1000px 0; }
+        }
+
+        @keyframes caustics {
+            0%   { transform: translate3d(0, 0, 0) scaleY(1); opacity: .35; }
+            50%  { transform: translate3d(-60px, 12px, 0) scaleY(1.08); opacity: .6; }
+            100% { transform: translate3d(-120px, 0, 0) scaleY(1); opacity: .35; }
+        }
+
+        html, body {
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: #eaf6ff;
+            background: linear-gradient(180deg, #061e2e 0%, #0b3d5c 45%, #0e5a76 100%);
+            overflow-x: hidden;
+        }
+
+        /* Deep current — wide, slow, dark ripples. */
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::before {
+            background-image:
+                repeating-linear-gradient(105deg,
+                    rgba(255, 255, 255, .06) 0 2px,
+                    transparent 2px 90px),
+                repeating-linear-gradient(75deg,
+                    rgba(0, 0, 0, .18) 0 3px,
+                    transparent 3px 140px);
+            animation: drift-slow 26s linear infinite;
+        }
+
+        /* Surface ripples — narrower, quicker, brighter. */
+        body::after {
+            background-image:
+                repeating-linear-gradient(93deg,
+                    rgba(180, 240, 255, .12) 0 1px,
+                    transparent 1px 38px),
+                repeating-linear-gradient(87deg,
+                    rgba(255, 255, 255, .08) 0 1px,
+                    transparent 1px 62px);
+            animation: drift-fast 11s linear infinite;
+        }
+
+        .river {
+            position: fixed;
+            inset: -20%;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(60% 22% at 20% 30%, rgba(160, 230, 255, .22), transparent 70%),
+                radial-gradient(45% 18% at 70% 55%, rgba(120, 210, 255, .18), transparent 70%),
+                radial-gradient(50% 20% at 45% 80%, rgba(200, 245, 255, .14), transparent 70%);
+            filter: blur(12px);
+            animation: caustics 9s ease-in-out infinite alternate;
+        }
+
+        main {
+            max-width: 40rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 1rem;
+        }
+
+        h1 {
+            margin: 0 0 .25rem;
+            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            letter-spacing: -.02em;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, .45);
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            opacity: .85;
+        }
+
+        h3 {
+            margin: 0;
+            font-weight: 400;
+            opacity: .9;
+        }
+
+        section {
+            background: rgba(4, 26, 40, .38);
+            border: 1px solid rgba(180, 240, 255, .18);
+            border-radius: .75rem;
+            padding: .25rem 1.25rem 1rem;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid rgba(180, 240, 255, .2);
+            margin: 1.5rem 0;
+        }
+
+        a {
+            color: #9fe8ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            opacity: .5;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body::before,
+            body::after,
+            .river {
+                animation: none;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="river" aria-hidden="true"></div>
     <main>
-        <h1>Kayaking</h1>
-        <h3>Wednesday, July 22nd, 2026, 18:00</h3>
+        <h1>Baidarės</h1>
+        <h3>2026 m. liepos 22 d., trečiadienis, 18:00</h3>
         <hr />
         <section>
-            <h2>Meeting</h2>
+            <h2>Susitikimas</h2>
             <ul>
-                <li><strong>18:00</strong> at <a href="https://maps.app.goo.gl/aDnkrUENP55vgRAD6?g_st=ac" target="_blank">Forum Palace prieplauka</a></li>
+                <li><strong>18:00</strong> prie <a href="https://maps.app.goo.gl/aDnkrUENP55vgRAD6?g_st=ac" target="_blank">Forum Palace prieplaukos</a></li>
             </ul>
         </section>
         <hr />
         <section>
-            <h2>What to bring</h2>
+            <h2>Ką pasiimti</h2>
             <ul>
-                <li>water shoes</li>
-                <li>a set of dry clothes</li>
+                <li>vandens batus</li>
+                <li>sausų drabužių komplektą</li>
+                <li>sūnų / dukrą</li>
             </ul>
         </section>
         <hr />
         <section>
-            <h2>Contact</h2>
+            <h2>Kontaktai</h2>
             <p><a href="tel:+37060699087">+370 606 99087</a></p>
         </section>
     </main>
     <footer>
-        <small>v1</small>
+        <small>v3</small>
     </footer>
 </body>
 </html>
